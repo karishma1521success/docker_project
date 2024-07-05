@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y python3 python3-pip
 # neccessary packages for python based app
 
 # set environment variables
-ENV Name=World
+ENV Name World
 
 #Run a command  to start the application
-CMD [ "python" , "app.py" ]
+CMD [ "python3" , "app.py" ]
 
