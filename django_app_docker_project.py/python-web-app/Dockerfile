@@ -11,10 +11,11 @@ COPY devops /app
 #Install necessary packages for python application as we have ubunut base image not python based image
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip install -r requirements.txt && \
+    pip3 install -r requirements.txt && \
     cd devops
 
 # cd devops is main app where all code exists
+#devops is project  name which we created using django skelton command
 
 ENTRYPOINT [ "python3" ] 
 # ENTRYPOINT is something which cannot be overwrite
