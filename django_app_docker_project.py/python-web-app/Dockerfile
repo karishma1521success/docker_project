@@ -11,7 +11,7 @@ COPY devops /app
 #Install necessary packages for python application as we have ubunut base image not python based image
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip3 install watchdog && \
+    pip3 install watchdog --break-system-packages && \
     pip3 install -r requirements.txt --break-system-packages && \
     cd devops
 
