@@ -11,7 +11,6 @@ COPY devops /app
 #Install necessary packages for python application as we have ubunut base image not python based image
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip3 install watchdog --break-system-packages && \
     pip3 install -r requirements.txt --break-system-packages && \
     cd devops
 
@@ -22,8 +21,10 @@ RUN apt-get update && \
 ENTRYPOINT ["python3"] 
 # ENTRYPOINT is something which cannot be overwrite
 
+
+ENV PYTHONUNBUFFERED=1
 #this cmd needs to run the django application
-CMD ["manage.py", "runserver", "0.0.0.0:8000", "--noreload"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 # CMD values contains which can be overwrite again
 # 0.0.0.0:8000 is reprsenting port where container will be running
 
