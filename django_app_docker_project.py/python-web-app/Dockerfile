@@ -21,6 +21,7 @@ RUN apt-get update && \
 ENTRYPOINT ["python3"] 
 # ENTRYPOINT is something which cannot be overwrite
 
+EXPOSE 8000
 
 ENV PYTHONUNBUFFERED=1
 #this cmd needs to run the django application
