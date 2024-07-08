@@ -23,7 +23,7 @@ ENTRYPOINT ["python3"]
 # ENTRYPOINT is something which cannot be overwrite
 
 #this cmd needs to run the django application
-CMD ["manage.py", "runserver", "0.0.0.0:8000", "--reload"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000", "--noreload"]
 # CMD values contains which can be overwrite again
 # 0.0.0.0:8000 is reprsenting port where container will be running
 
