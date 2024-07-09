@@ -18,7 +18,7 @@ RUN apt-get update && \
 # cd devops is main app where all code exists
 #devops is project  name which we created using django skelton command
 
-ENTRYPOINT ["python3"] 
+ENTRYPOINT ["python"] 
 # ENTRYPOINT is something which cannot be overwrite
 
 EXPOSE 8000
